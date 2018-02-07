@@ -31,6 +31,11 @@ router.get('/', async (req: Request, res: Response) => {
     `))
 })
 
+router.get('/list', async (req: Request, res: Response) => {
+  const tableList = await tableManager.getList()
+  res.jsonp(tableList)
+})
+
 /*
  * get table data
  * */
